@@ -55,7 +55,9 @@ class _KakaoLoginPageState extends State<KakaoLoginPage> {
       var token = await AuthApi.instance.issueAccessToken(authCode);
       TokenManager.instance.setToken(token);
     } catch (error) {
+      print('================ERROR==============================');
       print(error.toString());
+      print('================ERROR==============================');
     }
   }
 
