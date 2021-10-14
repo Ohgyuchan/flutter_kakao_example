@@ -8,9 +8,52 @@ class KakaoLoginPage extends StatefulWidget {
 }
 
 class _KakaoLoginPageState extends State<KakaoLoginPage> {
-  Future<void> _loginButtonPressed() async {
-    String authCode = await AuthCodeClient.instance.request();
-    print(authCode);
+  bool _isKakaoTalkInstalled = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _initKaKaoTalkInstalled();
+  }
+
+  _initKaKaoTalkInstalled() async {
+    final installed = await isKakaoTalkInstalled();
+    setState(() {
+      _isKakaoTalkInstalled = installed;
+    });
+  }
+
+  void _loginButtonPressed() {
+    _isKakaoTalkInstalled ? _loginWithKakaoApp() : _loginWithKakaoWeb();
+  }
+
+  Future<void> _loginWithKakaoWeb() async {
+    try {
+      var authCode = await AuthCodeClient.instance.request();
+      print(authCode);
+      await _issueAccessToken(authCode);
+    } catch (error) {
+      print(error.toString());
+    }
+  }
+
+  Future<void> _loginWithKakaoApp() async {
+    try {
+      var authCode = await AuthCodeClient.instance.requestWithTalk();
+      print(authCode);
+      await _issueAccessToken(authCode);
+    } catch (error) {
+      print(error.toString());
+    }
+  }
+
+  Future<void> _issueAccessToken(String authCode) async {
+    try {
+      var token = await AuthApi.instance.issueAccessToken(authCode);
+      TokenManager.instance.setToken(token);
+    } catch (error) {
+      print(error.toString());
+    }
   }
 
   @override
