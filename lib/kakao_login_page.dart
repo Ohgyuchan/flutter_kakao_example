@@ -24,7 +24,10 @@ class _KakaoLoginPageState extends State<KakaoLoginPage> {
   }
 
   void _loginButtonPressed() {
-    _isKakaoTalkInstalled ? _loginWithKakaoApp() : _loginWithKakaoWeb();
+    print('=========');
+    print(_isKakaoTalkInstalled);
+    print('=========');
+    _isKakaoTalkInstalled == true ? _loginWithKakaoApp() : _loginWithKakaoWeb();
   }
 
   Future<void> _loginWithKakaoWeb() async {
