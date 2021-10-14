@@ -4,7 +4,7 @@
 
 ### 에뮬레이터 화면(카카오톡이 깔려있지 않을 때)
 
-<img src="https://github.com/Ohgyuchan/cs-study/blob/master/assets/images/flutter_kakao/Screenshot_1634213034.png" width="300" height="700"><img src="https://github.com/Ohgyuchan/cs-study/blob/master/assets/images/flutter_kakao/Screenshot_1634213040.png" width="300" height="700"><img src="https://github.com/Ohgyuchan/cs-study/blob/master/assets/images/flutter_kakao/Screenshot_1634213057.png" width="300" height="700">
+<img src="https://github.com/Ohgyuchan/cs-study/blob/master/assets/images/flutter_kakao/Screenshot_1634213034.png" width="250" height="700"><img src="https://github.com/Ohgyuchan/cs-study/blob/master/assets/images/flutter_kakao/Screenshot_1634213040.png" width="250" height="700"><img src="https://github.com/Ohgyuchan/cs-study/blob/master/assets/images/flutter_kakao/Screenshot_1634213057.png" width="250" height="700">
 
 
 카카오톡이 깔려 있을 때 화면도 보여주려 하였으나  
